@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  
+  /* BST Global Color Palette (Brand Standards) */
+  --color-bst-blue: #0072EA;
+  --color-bst-dark-blue: #004FA3;
+  --color-bst-hover-blue: #0055AF;
+  --color-bst-blue-darkest: #00254D;
+  --color-bst-blue-light: #F6F9FE;
+  --color-bst-white: #FFFFFF;
+  
+  --color-accent-green: #43B571;
+  --color-accent-green-hover: #389e62;
+  --color-cta-dark-overlay: #3191FF;
+  --color-cta-dark-hover: #257fe6;
+  
+  --color-text-grey-darkest: #40474F;
+  --color-text-grey-dark: #5C6670;
+  --color-text-grey: #8F99A3;
+  --color-text-grey-light: #EEF0F1;
+  --color-text-grey-lightest: #FAFAFA;
+}
+
+/* 1. BST Web Type Scale & Design Tokens (V1, Aug 2026) */
+:root {
+  font-family: 'Poppins', sans-serif;
+  
+  /* Mobile: <768px */
+  --type-h1-size: 40px;
+  --type-h1-line-height: 1.10;
+  --type-h1-weight: 600;
+
+  --type-h2-size: 40px;
+  --type-h2-line-height: 1.12;
+  --type-h2-weight: 600;
+
+  --type-h3-size: 24px;
+  --type-h3-line-height: 1.25;
+  --type-h3-weight: 600;
+
+  --type-h4-size: 21px;
+  --type-h4-line-height: 1.32;
+  --type-h4-weight: 600;
+
+  --type-h5-size: 18px;
+  --type-h5-line-height: 1.40;
+  --type-h5-weight: 600;
+
+  --type-h6-size: 16px;
+  --type-h6-line-height: 1.40;
+  --type-h6-weight: 600;
+
+  --type-body-size: 16px;
+  --type-body-line-height: 1.70;
+  --type-body-weight: 400;
+
+  --type-small-body-size: 14px;
+  --type-small-body-line-height: 1.60;
+  --type-small-body-weight: 400;
+
+  color: #5C6670;
+  background-color: #FFFFFF;
+}
+
+/* Tablet: 768px – 992px */
+@media (min-width: 768px) {
+  :root {
+    --type-h1-size: 52px;
+    --type-h2-size: 48px;
+    --type-h3-size: 28px;
+    --type-h4-size: 22px;
+    --type-h5-size: 20px;
+    --type-h6-size: 18px;
+    --type-body-size: 16px;
+    --type-small-body-size: 15px;
+  }
+}
+
+/* Desktop: ≥993px */
+@media (min-width: 993px) {
+  :root {
+    --type-h1-size: 64px;
+    --type-h2-size: 56px;
+    --type-h3-size: 32px;
+    --type-h4-size: 24px;
+    --type-h5-size: 20px;
+    --type-h6-size: 18px;
+    --type-body-size: 16px;
+    --type-small-body-size: 15px;
+  }
+}
+
+/* Global Typography Application */
+*, *::before, *::after {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line-height);
+  font-weight: var(--type-body-weight);
+  color: #5C6670;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--type-h1-size);
+    line-height: var(--type-h1-line-height);
+    font-weight: var(--type-h1-weight);
+    color: #40474F;
+  }
+
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--type-h2-size);
+    line-height: var(--type-h2-line-height);
+    font-weight: var(--type-h2-weight);
+    color: #40474F;
+  }
+
+  h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-line-height);
+    font-weight: var(--type-h3-weight);
+    color: #40474F;
+  }
+
+  h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--type-h4-size);
+    line-height: var(--type-h4-line-height);
+    font-weight: var(--type-h4-weight);
+    color: #40474F;
+  }
+
+  h5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--type-h5-size);
+    line-height: var(--type-h5-line-height);
+    font-weight: var(--type-h5-weight);
+    color: #40474F;
+  }
+
+  h6 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--type-h6-size);
+    line-height: var(--type-h6-line-height);
+    font-weight: var(--type-h6-weight);
+    color: #40474F;
+  }
+}
+
+/* Links: Poppins 500 in #0072EA, underlined on hover and focus */
+a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #0072EA;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+a:hover, a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Primary nav links: Poppins 600, 14px, #40474F, with hover color #0072EA */
+.bst-nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #40474F;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+.bst-nav-link:hover, .bst-nav-link:focus-visible {
+  color: #0072EA;
+  text-decoration: none;
+}
+
+.bst-bullet-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+}
+
+li {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #5C6670;
+}
+
+li::marker {
+  color: #0072EA;
+}
+
+/* 4. Top-to-Bottom Gradients: linear-gradient(180deg, #0072EA 0%, #004FA3 100%) */
+.bg-gradient-blue-dark,
+.bst-gradient-stat-cta {
+  background: linear-gradient(180deg, #0072EA 0%, #004FA3 100%);
+}
+
+.bg-gradient-blue-light {
+  background: linear-gradient(180deg, #F6F9FE 0%, #EBF5FF 100%);
+}
+
+/* Accessible focus ring style across all interactive elements */
+:focus-visible {
+  outline: 2px solid #0072EA;
+  outline-offset: 2px;
+}
+
+/* 5. HubSpot Embedded Form BST Theme */
+#hubspot-form-container .hs-form {
+  font-family: 'Poppins', sans-serif;
+  color: #40474F;
+  width: 100%;
+}
+
+#hubspot-form-container .hs-form fieldset {
+  max-width: 100% !important;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#hubspot-form-container .hs-form .hs-form-field {
+  margin-bottom: 1.25rem;
+}
+
+#hubspot-form-container .hs-form label:not(.hs-error-msg) {
+  font-size: 14px;
+  font-weight: 600;
+  color: #40474F;
+  margin-bottom: 0.375rem;
+  display: block;
+}
+
+#hubspot-form-container .hs-form .hs-input:not([type="checkbox"]):not([type="radio"]) {
+  width: 100% !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 15px !important;
+  color: #40474F !important;
+  background-color: #FAFAFA !important;
+  border: 1px solid #EEF0F1 !important;
+  border-radius: 0.5rem !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+#hubspot-form-container .hs-form .hs-input:not([type="checkbox"]):not([type="radio"]):focus {
+  background-color: #FFFFFF !important;
+  border-color: #0072EA !important;
+  box-shadow: 0 0 0 2px rgba(0, 114, 234, 0.2) !important;
+}
+
+#hubspot-form-container .hs-form textarea.hs-input {
+  min-height: 90px;
+  resize: vertical;
+}
+
+#hubspot-form-container .hs-form .hs-button {
+  width: 100% !important;
+  padding: 0.75rem 1.75rem !important;
+  background-color: #43B571 !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  border-radius: 9999px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-family: 'Poppins', sans-serif !important;
+  margin-top: 0.75rem !important;
+  min-height: 44px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+}
+
+#hubspot-form-container .hs-form .hs-button:hover {
+  background-color: #389e62 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12) !important;
+}
+
+#hubspot-form-container .hs-form ul.hs-error-msgs {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0.25rem 0 0 !important;
+}
+
+#hubspot-form-container .hs-form ul.hs-error-msgs li label {
+  color: #ef4444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+#hubspot-form-container .hs-form .legal-consent-container {
+  margin-top: 1rem;
+  font-size: 13px;
+  color: #5C6670;
+  line-height: 1.5;
+}
+
+#hubspot-form-container .hs-form .legal-consent-container a {
+  color: #0072EA;
+  text-decoration: underline;
+}
+
+/* 6. Form Checkbox Alignment and List Reset */
+.hbspt-form ul { padding-left: 0px; list-style: none; }
+.hs-form-checkbox-display, .hs-form-booleancheckbox-display { display: flex; align-items: flex-start; column-gap: 10px; }
+
+/* 7. Header Button Below 400px (Requirement 3c) */
+@media (max-width: 400px) {
+  #header-cta-btn {
+    white-space: nowrap !important;
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+    min-height: 40px !important;
+  }
+}
+
+
